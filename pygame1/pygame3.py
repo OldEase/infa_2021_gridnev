@@ -210,20 +210,81 @@ def house(x_start, y_start, x_size, y_size):  # отрисовка дома
                          3
         )  #
 
-    pygame.draw.rect(screen, (250, 240, 0), ((x_start + x_size / 5), (y_start + y_size / 20), (3 * x_size / 5), (5 * y_size / 30)), 0)  # верхнее окно
-    pygame.draw.rect(screen, (0, 0, 0), ((x_start + x_size / 10), (y_start + y_size / 10), (4 * x_size / 5), (y_size / 6)), 3)  # кортур балкончика
+    pygame.draw.rect(
+                     screen,
+                     (250, 240, 0),
+                     (
+                      (x_start + x_size / 5), (y_start + y_size / 20),
+                      (3 * x_size / 5), (5 * y_size / 30)
+                     ),
+                     0
+    )  # верхнее окно
+    pygame.draw.rect(
+                     screen,
+                     (0, 0, 0),
+                     (
+                      (x_start + x_size / 10), (y_start + y_size / 10),
+                      (4 * x_size / 5), (y_size / 6)
+                     ),
+                     3
+    )  # контур балкончика
     for i in range(10):  # перекладины балкончика
-        pygame.draw.line(screen, (0, 0, 0), ((x_start + x_size / 10 + i * (4 * x_size / 5) / 10), (y_start + y_size / 10)),
-                         ((x_start + x_size / 10 + i * (4 * x_size / 5) / 10), (y_size / 6 + y_start + y_size / 10)), 3)
-    pygame.draw.polygon(screen, (40, 0, 0),
-                        [[x_start - x_size / 10, y_start], [x_size + x_start + x_size / 10, y_start], [x_size + x_start - x_size / 10, y_start - y_size / 10],
-                         [x_start + x_size / 10, y_start - y_size / 10]])  # крыша
-    pygame.draw.rect(screen, (40, 0, 0), ((x_start + x_size / 5), (y_start - y_size / 5), (x_size / 10), (y_size / 10)), 0)  # труба 1
-    pygame.draw.rect(screen, (40, 0, 0), ((x_start + 2 * x_size / 5), (y_start - y_size / 5), (x_size / 10), (y_size / 10)), 0)  # труба 2
+        pygame.draw.line(
+                         screen,
+                         (0, 0, 0),
+                         (
+                          (x_start + x_size / 10 + i * (4 * x_size / 5) / 10),
+                          (y_start + y_size / 10)
+                         ),
+                         (
+                          (x_start + x_size / 10 + i * (4 * x_size / 5) / 10),
+                          (y_size / 6 + y_start + y_size / 10)
+                         ),
+                         3
+        )
+    pygame.draw.polygon(
+                        screen,
+                        (40, 0, 0),
+                        [
+                         [x_start - x_size / 10, y_start],
+                         [x_size + x_start + x_size / 10, y_start],
+                         [x_size + x_start - x_size / 10, y_start - y_size / 10],
+                         [x_start + x_size / 10, y_start - y_size / 10]
+                        ]
+    )  # крыша
+    pygame.draw.rect(
+                     screen,
+                     (40, 0, 0),
+                     (
+                      (x_start + x_size / 5), (y_start - y_size / 5),
+                      (x_size / 10), (y_size / 10)
+                     ),
+                     0
+    )  # труба 1
+    pygame.draw.rect(
+                     screen,
+                     (40, 0, 0),
+                     (
+                      (x_start + 2 * x_size / 5), (y_start - y_size / 5),
+                      (x_size / 10), (y_size / 10)
+                     ),
+                     0
+    )  # труба 2
 
 
-pygame.draw.rect(screen, (130, 130, 130), (0, 0, 400, 250), 0)  # небо
-pygame.draw.circle(screen, (255, 255, 255), (350, 50), 35, 0)  # луна
+pygame.draw.rect(
+                 screen,
+                 (130, 130, 130),
+                 (0, 0, 400, 250),
+                 0
+)  # небо
+pygame.draw.circle(
+                   screen,
+                   (255, 255, 255),
+                   (350, 50),
+                   35,
+                   0
+)  # луна
 cloud((50, 50, 50), 100, 50, 300, 60)
 cloud((40, 40, 40), 50, 100, 250, 50)
 cloud((80, 80, 80), 150, 20, 150, 50)
